@@ -1,4 +1,5 @@
-let deleiveriesData = require('/home/abdul/Desktop/IPL/src/public/output/deliveries.json');
+const path = require('path');
+let deleiveriesData = require(path.join(__dirname,'..','data','deliveries.json'));
 
 let fs = require('fs');
 // Find the bowler with the best economyBowlers in super overs
@@ -55,5 +56,6 @@ console.log(result);
 
 const jsonResult = JSON.stringify(result, null, 2);
 
-fs.writeFileSync('/home/abdul/Desktop/IPL/src/public/output/besteconomyBowlersInSuperOver.json', jsonResult);
+fs.writeFileSync(path.join(__dirname,'..','public','output','besteconomyBowlersInSuperOver.json'), jsonResult);
+
 

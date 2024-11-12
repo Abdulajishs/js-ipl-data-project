@@ -1,5 +1,9 @@
-let matchesData = require('/home/abdul/Desktop/IPL/src/public/output/matchesPerYear.json')
-let deleiveriesData = require('/home/abdul/Desktop/IPL/src/public/output/deliveries.json');
+const path = require('path');
+let matchesData = require(path.join(__dirname,'..','data','matchesPerYear.json'));
+let deleiveriesData = require(path.join(__dirname,'..','data','deliveries.json'));
+
+// let deleiveriesData = require("../data/deliveries.json")
+
 
 let fs = require('fs');
 
@@ -59,5 +63,5 @@ console.log(result);
 
 const jsonResult = JSON.stringify(result, null, 2);
 
-fs.writeFileSync('/home/abdul/Desktop/IPL/src/public/output/strikeRateOfBatsmanForEachSeason.json', jsonResult);
+fs.writeFileSync(path.join(__dirname,'..','public','output','strikeRateOfBatsmanForEachSeason.json'), jsonResult);
 

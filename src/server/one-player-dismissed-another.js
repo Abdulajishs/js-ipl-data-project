@@ -1,5 +1,5 @@
-let deleiveriesData = require('/home/abdul/Desktop/IPL/src/public/output/deliveries.json');
-
+const path = require('path');
+let deleiveriesData = require(path.join(__dirname,'..','data','deliveries.json'));
 let fs = require('fs');
 
 // Find the highest number of times one player has been dismissed by another player
@@ -47,6 +47,5 @@ console.log(result);
 
 const jsonResult = JSON.stringify(result, null, 2);
 
-fs.writeFileSync('/home/abdul/Desktop/IPL/src/public/output/highestDismissalByBowler.json', jsonResult);
-
+fs.writeFileSync(path.join(__dirname,'..','public','output','highestDismissalByBowler.json'), jsonResult);
 

@@ -1,4 +1,5 @@
-let matchesData = require('/home/abdul/Desktop/IPL/src/public/output/matchesPerYear.json')
+const path = require('path');
+let matchesData = require(path.join(__dirname,'..','data','matchesPerYear.json'));
 
 let fs = require('fs');
 
@@ -42,5 +43,5 @@ console.log(result);
 
 const jsonResult = JSON.stringify(result, null, 2);
 
-fs.writeFileSync('/home/abdul/Desktop/IPL/src/public/output/highestPlayerOfTheMatch.json', jsonResult);
+fs.writeFileSync(path.join(__dirname,'..','public','output','highestPlayerOfTheMatch.json'), jsonResult);
 
